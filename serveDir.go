@@ -5,6 +5,8 @@ import (
   "net/http"
 )
 
+// go build -ldflags '-s -w'
+// mv ./serve_dir /usr/local/bin
 func main() {
   fs := http.FileServer(http.Dir("."))
   http.Handle("/", fs)
